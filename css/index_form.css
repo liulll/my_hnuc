@@ -1,0 +1,88 @@
+a{
+	text-decoration: none;
+	color: #555555;
+	font-size: 12px;
+}
+a:hover{
+	text-decoration: underline;
+}
+h2{
+	font-size: 30px;
+	color: #242222;
+}
+h3{
+	font-size: 22px;
+	color: #242222;
+}
+h5{
+	font-size: 16px;
+	color: #555555;
+}
+body{
+	width: 100%;
+}
+div.center{
+	width: 70%;
+	margin-top: 100px;
+	margin-left: 15%;
+	position: relative;
+}
+div.left{
+	position: absolute;
+	left: 0;
+	width: 49%;
+	display: inline-block;
+}
+div.left div.left_content{
+	margin: 50px 50px;
+}
+div.left_content h5{
+	margin-top: 25px;
+}
+div.left_content span{
+	height: 22px;
+	line-height: 22px;
+}
+div.right{
+	position: absolute;
+	right: 0;
+	width: 340px;
+	display: inline-block;
+}
+div.right h2{
+	text-align: right;
+	margin-bottom: 20px;
+}
+div.hr_solid{
+	border-bottom: 1px solid #000000;
+	margin-top: 3px;
+}
+div.hr_dashed{
+	border-bottom:1px dashed #000000;
+	margin-top: 3px;
+}
+form{
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+select{
+	display: block;
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+}
+input.wtext{
+	display: block;
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+}
+input.sub{
+	width: 100px;
+	height: 40px;
+}
+div.right a{
+	position: absolute;
+	right: 20px;
+	bottom: 35px;
+}
