@@ -19,14 +19,14 @@
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 			con=DriverManager.getConnection("jdbc:odbc:testInfo");
 			st=con.createStatement();
-			String sql="select * from testInfo where username='"+username+"'";
+			String sql="select * from teacher where username='"+username+"'";
 			rs=st.executeQuery(sql);
 			if(rs.next()){
 			//判断密码是否正确
-			String sql2="select * from testInfo where password='"+password+"'";
+			String sql2="select * from teacher where password='"+password+"'";
 			rs=st.executeQuery(sql2);
 			if(rs.next()){
-				response.sendRedirect("student.jsp");
+				response.sendRedirect("teacher.jsp");
 			}
 			else{
 				response.sendRedirect("index.jsp");

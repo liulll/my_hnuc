@@ -14,8 +14,8 @@
 						<option class="pass">已通过</option>
 						<option class="wait">待审</option>
 					</select>
-					<a href="stuadd.jsp" name="add" class="add">新建记录</a>
-					<a href="studelete.jsp" name="delete" class="delete" target="_blank">删除记录</a>
+					<a href="stuInfoadd.jsp" name="add" class="add">添加学生信息</a>
+					<a href="stuInfodelete.jsp" name="delete" class="delete" target="_blank">删除学生信息</a>
 			</div>
 			<table align="center" border="1" width="800">
 				<tr>

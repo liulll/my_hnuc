@@ -23,7 +23,7 @@
 				<td><%=rs.getString("学院")%></td>
 				<td><%=rs.getString("专业")%></td>
 				<td><%=rs.getString("学号")%></td>
-			</tr>
+			</tr>w
 			<%}%>
 			<%
 			rs.close();
