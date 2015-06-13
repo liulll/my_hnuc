@@ -11,15 +11,15 @@
 			Statement stmt=conn.createStatement();
 		%>
 		<center>
-			<p>删除学生信息</p>
-			<form action="stuInfodeleteche ck.jsp" method="post">
-				<select name="username">
+			<p>删除志愿信息</p>
+			<form action="studeletecheck.jsp" method="post">
+				<select name="actno">
 					<%
-						ResultSet rs=stmt.executeQuery("SELECT * FROM stuInfo");
+						ResultSet rs=stmt.executeQuery("SELECT * FROM activityInfo");
 						while(rs.next()){
-						String username=rs.getString("username");
+						String actno=rs.getString("actno");
 					%>
-					<option value="<%=username%>"><%=username%></option>
+					<option value="<%=actno%>"><%=actno%></option>
 					<%}%>
 				</select>
 			<p>

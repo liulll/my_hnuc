@@ -7,51 +7,26 @@
 		<title>学生页面</title>
 	</head>
 	<body>
-		<form>
+		<%
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			Connection conn=DriverManager.getConnection("jdbc:odbc:testInfo");
+			Statement stmt=conn.createStatement();
+		%>
+		<form action="teacher_maincheck.jsp" method="post">
 			<div class="center">
-					<select>
-						<option class="all">所有记录</option>
-						<option class="pass">已通过</option>
-						<option class="wait">待审</option>
+					<select name="type">
+					<%
+						ResultSet rs=stmt.executeQuery("SELECT * FROM activityInfo");
+						while(rs.next()){
+						String type=rs.getString("type");
+					%>
+					<option value="<%=type%>"><%=type%></option>
+					<%}%>
 					</select>
 					<a href="stuInfoadd.jsp" name="add" class="add">添加学生信息</a>
-					<a href="stuInfodelete.jsp" name="delete" class="delete" target="_blank">删除学生信息</a>
+					<a href="stuInfodelete.jsp" name="delete" class="delete">删除学生信息</a>
 			</div>
-			<table align="center" border="1" width="800">
-				<tr>
-					<th width="200" height="80" align="center">志愿记录编号</th>
-					<th width="200" height="80" align="center">活动名称</th>
-					<th width="200" height="80" align="center">开始时间</th>
-					<th width="200" height="80" align="center">结束时间</th>
-					<th width="200" height="80" align="center">摘要</th>
-					<th width="200" height="80" align="center">状态</th>
-				</tr>
-				<%
-					Connection con=null;
-					Statement st=null;
-					ResultSet rs=null;
-					Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-					con=DriverManager.getConnection("jdbc:odbc:testInfo");
-					st=con.createStatement();
-					String sql="select * from activityInfo";
-					rs=st.executeQuery(sql);
-					while(rs.next()){
-				%>
-				<tr>
-					<td><%=rs.getString("activityno")%></td>
-					<td><%=rs.getString("actname")%></td>
-					<td><%=rs.getString("starttime")%></td>
-					<td><%=rs.getString("endtime")%></td>
-					<td><%=rs.getString("abstract")%></td>
-					<td><%=rs.getString("type")%></td>
-				</tr>
-				<%}%>
-				<%
-					//rs.close();
-					//stmt.close();
-					//conn.close();
-				%>
-			</table>
+			
 		</form>
 	</body>
 </html>

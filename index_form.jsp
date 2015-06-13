@@ -27,22 +27,41 @@
 				<div class="hr_solid"></div>
 				<div class="hr_dashed"></div>
 				<form method="post" action="indexcheck.jsp">
+					<table>
 					<tr>
-						<br>
+						<td><p class="pname">用户类型&nbsp;：</p></td>
+						<td>
 						<select name="usertype" size="1">
-							<option name="manager">管理员</option>
-							<option name="teacher">教师</option>
-							<option name="student">学生</option>
+							<option value="user">user</option>
+							<option value="admin">admin</option>
 						</select>
-						<br>
-						<input name="username" class="wtext" type="text" size="26" value="请输入用户名"/>
-						<br>
-						<input name="userpass" class="wtext" type="password" size="26"/>
-						<br>
-						<input type="submit" name="sub" class="sub" value="登录" />
-						<a href="http://www.hnuc.edu.cn" target="_blank">湖南商学院</a>
-						<br>
+						</td>
 					</tr>
+					<tr>
+						<td>
+						<p class="pname">用&nbsp; 户 &nbsp;名：</p>
+						</td>
+						<td>
+						<input name="username" class="wtext" type="text" size="26" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p class="pname">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</p>
+						</td>
+						<td>
+						<input name="userpass" class="wtext" type="password" size="26"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<input type="submit" name="sub" class="sub" value="登录" />
+						</td>
+						<td>
+						<a href="http://www.hnuc.edu.cn" target="_blank">湖南商学院</a>
+						</td>
+					</tr>
+					</table>
 				</form>
 						<div class="hr_dashed"></div>
 						<div class="hr_solid"></div>

@@ -4605,11 +4605,39 @@
   <!-- deployment descriptor, that list *replaces* the list configured      -->
   <!-- here, so be sure to include any of the default values that you wish  -->
   <!-- to use within your application.                                       -->
-
+  
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <!--文件上传-->
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.liaoxuefeng.web.FileUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+
+    <!--用户登录处理-->
+    <servlet>
+      <servlet-name>LoginServlet</servlet-name>
+      <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+      <servlet-name>RegisterServlet</servlet-name>
+      <servlet-class>servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>LoginServlet</servlet-name>
+      <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>RegisterServlet</servlet-name>
+      <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

@@ -19,12 +19,12 @@
 			</div>
 			<table align="center" border="1" width="800">
 				<tr>
-					<th width="200" height="80" align="center">志愿记录编号</th>
+					<!--<th width="200" height="80" align="center">志愿记录编号</th>-->
 					<th width="200" height="80" align="center">活动名称</th>
 					<th width="200" height="80" align="center">开始时间</th>
 					<th width="200" height="80" align="center">结束时间</th>
 					<th width="200" height="80" align="center">摘要</th>
-					<th width="200" height="80" align="center">状态</th>
+					<!--<th width="200" height="80" align="center">状态</th>-->
 				</tr>
 				<%
 					Connection con=null;
@@ -38,12 +38,12 @@
 					while(rs.next()){
 				%>
 				<tr>
-					<td><%=rs.getString("activityno")%></td>
+					
 					<td><%=rs.getString("actname")%></td>
-					<td><%=rs.getString("starttime")%></td>
-					<td><%=rs.getString("endtime")%></td>
-					<td><%=rs.getString("abstract")%></td>
-					<td><%=rs.getString("type")%></td>
+					<td><%=rs.getString("stime")%></td>
+					<td><%=rs.getString("etime")%></td>
+					<td><%=rs.getString("abstrac")%></td>
+					
 				</tr>
 				<%}%>
 				<%

@@ -61,19 +61,21 @@ div.hr_dashed{
 	border-bottom:1px dashed #000000;
 	margin-top: 3px;
 }
-form{
+table{
+	width: 300px;
 	margin-left: 20px;
+	margin-top: 20px;
 	margin-bottom: 20px;
 }
 select{
-	display: block;
-	width: 300px;
+	display: inline-block;
+	width: 200px;
 	height: 40px;
 	line-height: 40px;
 }
 input.wtext{
-	display: block;
-	width: 300px;
+	display: inline-block;
+	width: 200px;
 	height: 40px;
 	line-height: 40px;
 }
@@ -82,7 +84,13 @@ input.sub{
 	height: 40px;
 }
 div.right a{
-	position: absolute;
-	right: 20px;
-	bottom: 35px;
+	margin-left: 130px;
+}
+p.pname{
+	display: inline-block;
+	width: 100px;
+}
+tr{
+	height: 50px;
+	line-height: 60px;
 }
