@@ -1,0 +1,62 @@
+
+		a{
+			display:inline-block; 
+			text-align:center; 
+			text-decoration:none; 
+			width:104px; 
+			height:50px; 
+			line-height:50px; 
+			font-size: 13px;
+		}
+		.a{
+			float: right;
+		}
+		.right{
+			height: 50px;
+			line-height: 50px;
+		}
+		.menu {
+			display: inline-block;
+		}
+		.menu ul {
+		padding:0; 
+		margin:0;
+		list-style-type: none;
+		}
+		.menu ul li {
+		float:left; 
+		position:relative;
+		}
+		.menu ul li a, .menu ul li a:visited {
+		display:inline-block; 
+		text-align:center; 
+		text-decoration:none; 
+		width:104px; 
+		height:50px; 
+		line-height:50px; 
+		font-size:13px;
+		}
+		.menu ul li ul {
+		display: none;
+		}
+		.menu ul li:hover ul {
+		display:block; 
+		position:absolute; 
+		top:31px; 
+		left:0; 
+		width:105px;
+		}
+		.menu ul li:hover ul li a {
+		display:block; 
+		}
+		li.change{
+			height: 30px;
+			line-height: 30px;
+		}
+		.right{
+			text-align: right;
+			margin-right: 120px;
+		}
+		th{
+			text-align: center;
+		}

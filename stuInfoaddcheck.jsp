@@ -16,6 +16,13 @@
 			String userclass=request.getParameter("userclass");
 			byte b2[]=userclass.getBytes("ISO-8859-1");
 			userclass=new String(b2,"UTF-8");
+			String stuyear=request.getParameter("useryear");
+			byte b3[]=stuyear.getBytes("ISO-8859-1");
+			stuyear=new String(b3,"UTF-8");
+			String academy=request.getParameter("academy");
+			byte b4[]=academy.getBytes("ISO-8859-1");
+			academy=new String(b4,"UTF-8");
+			String userpass="888888";
 			//String userphoto=request.getParameter("url");
 			if(username.equals("")){
 			response.sendRedirect("techer.jsp");
@@ -23,8 +30,10 @@
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 			Connection conn=DriverManager.getConnection("jdbc:odbc:testInfo");
 			Statement stmt=conn.createStatement();
-			String sql="insert into stuInfo values("+username+",'"+userclass+"','"+stuname+"')";
+			String sql="insert into stuInfo values("+username+",'"+userclass+"','"+stuname+"','"+stuyear+"','"+academy+"')";
 			stmt.executeUpdate(sql);
+			String sql1="insert into testInfo values("+username+",'"+userpass+"','"+academy+"')";
+			stmt.executeUpdate(sql1);
 		
 		%>
 		<center>
@@ -34,7 +43,7 @@
 			新的数据已经添加到数据库中！
 			</p>
 			<form name="form1" method="post" action="show_test.jsp">
-				<input type="submit" id="back" name="back" value="返回班级学生页面">
+				<input type="submit" id="back" name="back" onclick="javascript:window.close();" value="返回班级学生页面">
 			</form>
 		</center>
 	</body>

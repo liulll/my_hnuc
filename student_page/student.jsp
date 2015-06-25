@@ -6,11 +6,12 @@
 		<title>学生页面</title>
 	</head>
 		<frameset rows="55px,*" frameborder="no">
-			<frame src="index_top.jsp" name="index_top" scrolling="no" noresize></frame>
+			<frame src="../index_top.jsp" name="index_top" scrolling="no" noresize></frame>
 			<frameset cols="250px,*" frameborder="no">
-				<frame src="teacher_nav.jsp" name="teacher_nav" scrolling="no" noresize></frame>
-				<frame src="teacher_main.jsp" name="teacher_main" scrolling="no" noresize></frame>
+				<frame src="student_nav.jsp" name="student_nav" scrolling="no" noresize></frame>
+				<frame src="student_main.jsp" name="student_main" scrolling="no" noresize></frame>
 			</frameset>
+		</frameset>
 	<noframes>
 		对不起，您的浏览器版本太低！
 	</noframes>

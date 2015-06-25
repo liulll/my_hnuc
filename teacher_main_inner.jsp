@@ -5,31 +5,46 @@
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="css/list.css"/>
 	<!--	<link rel="stylesheet" type="text/css" href="css/student_main.css"/>-->
-		<title>老师页面</title>
+		<title>学生页面</title>
 	</head>
 	<body>
-		<%! 
-			String academy;
-			String username;
-		%>
+		<%! String academy;%>
 		<%
 			Object name=session.getAttribute("name");
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			Connection conn=DriverManager.getConnection("jdbc:odbc:testInfo");
+			Statement stmt=conn.createStatement();
 		%>
 		<form action="teacher_maincheck.jsp" method="post">
+			<%!
+				String username;
+			%>
+			<%
+				username=request.getParameter("name");
+				session.setAttribute("ss",username);
+			%>
 			<div class="center">
-					<!--<a href="stuInfoadd.jsp" name="add" class="add">添加学生信息</a>-->
-					<a href="#" onclick="openwin1()" name="add" class="ass">添加学生信息</a>
-					<!--<a href="stuInfodelete.jsp" name="delete" class="delete">删除学生信息</a>-->
-					<a href="#" onclick="openwin2()" name="delete" class="delete">删除学生信息</a>
+				<div class="menu">
+					<ul>
+						<li><a href="teacher_inner_check.jsp?name=all" class="hide">所有记录</a>
+						<ul>					
+							<li class="change"><a href="teacher_inner_check.jsp?name=waiting">待审</a></li>
+							<li class="change"><a href="teacher_inner_check.jsp?name=passed">已通过</a></li>
+						</ul>
+						</li>
+					</ul>					
+				</div>	
 					<table align="center" border="1" width="800">
 						<tr>
 							<!--<th width="200" height="80" align="center">志愿记录编号</th>-->
-							<th width="200" height="80" align="center">所属班级</th>
 							<th width="200" height="80" align="center">学生学号</th>
-							<th width="200" height="80" align="center">学生姓名</th>
-							<th width="200" height="80" align="center">入学年份</th>
+							<th width="200" height="80" align="center">志愿记录编号</th>
+							<th width="200" height="80" align="center">志愿名称</th>
+							<th width="200" height="80" align="center">志愿状态</th>
 						</tr>
+						
 						<%
+							//out.print(username);
 							Connection con=null;
 							Statement st=null;
 							ResultSet rs=null;
@@ -51,13 +66,8 @@
 								if(intPage<1) intPage=1;
 							}
 							st=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-							String sql="select * from testInfo where username='"+name+"'";
+							String sql="select * from activityInfo where username='"+username+"'";
 							rs=st.executeQuery(sql);
-							while(rs.next()){
-								academy=rs.getString("academy");
-							}
-							String sql1="select * from stuInfo where academy='"+academy+"'";
-							rs=st.executeQuery(sql1);
 							rs.last();
 							intRowCount=rs.getRow();
 							intPageCount=(intRowCount+intPageSize-1)/intPageSize;
@@ -67,13 +77,12 @@
 								rs.absolute((intPage-1)*intPageSize+1);
 							i=0;
 							while(i<intPageSize && !rs.isAfterLast()){
-								username=rs.getString("username");
 						%>
 						<tr>
-							<td align="center"><%=rs.getString("userclass")%></td>
-							<td align="center"><a href="teacher_main_inner.jsp?name=<%=username%>"><%=username%></a></td>
-							<td align="center"><%=rs.getString("stuname")%></td>
-							<td align="center"><%=rs.getString("stuyear")%></td>
+							<td align="center"><a href="teacher_main_inner.jsp?name=<%=rs.getString("username")%>"><%=rs.getString("username")%></a></td>
+							<td align="center"><a href="teacher_checkcon.jsp?name=<%=rs.getString("actno")%>"><%=rs.getString("actno")%></a></td>
+							<td align="center"><%=rs.getString("actname")%></td>
+							<td align="center"><%=rs.getString("acttype")%></td>
 						</tr>
 						<%
 								rs.next();
@@ -96,7 +105,7 @@
 						<%
 							}
 							rs.close();
-							st.close();
+							stmt.close();
 							con.close();
 						%>
 					</div>

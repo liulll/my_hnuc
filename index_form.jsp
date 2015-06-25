@@ -26,7 +26,7 @@
 				</tr>
 				<div class="hr_solid"></div>
 				<div class="hr_dashed"></div>
-				<form method="post" action="indexcheck.jsp">
+				<form method="post" action="indexcheck.jsp" target="_top">
 					<table>
 					<tr>
 						<td><p class="pname">用户类型&nbsp;：</p></td>

@@ -5,29 +5,21 @@
 		<title>StuaddInfo</title>
 	</head>
 	<body>
-		<%! String academy;%>
 		<%
-			Object name=session.getAttribute("name");
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 			Connection conn=DriverManager.getConnection("jdbc:odbc:testInfo");
-			Statement st=conn.createStatement();
-			ResultSet rs=null;
-			String sql="select * from testInfo where username='"+name+"'";
-			rs=st.executeQuery(sql);
-			while(rs.next()){
-				academy=rs.getString("academy");
-			}
+			Statement stmt=conn.createStatement();
 		%>
 		<center>
-			<p>删除学生信息</p>
-			<form action="stuInfodeletecheck.jsp" method="post">
-				<select name="username">
+			<p>请选择要删除记录信息的志愿号：</p>
+			<form action="studeletecheck.jsp" method="post">
+				<select name="actno">
 					<%
-						rs=st.executeQuery("SELECT * FROM stuInfo where academy='"+academy+"'");
+						ResultSet rs=stmt.executeQuery("SELECT * FROM activityInfo");
 						while(rs.next()){
-						String username=rs.getString("username");
+						String actno=rs.getString("actno");
 					%>
-					<option value="<%=username%>"><%=username%></option>
+					<option value="<%=actno%>"><%=actno%></option>
 					<%}%>
 				</select>
 			<p>

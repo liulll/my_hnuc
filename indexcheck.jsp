@@ -5,10 +5,15 @@
 		<title>indexcheckJSP page</title>
 	</head>
 	<body>
+		<%! int r;%>
 		<%
+			r=0;
 			String txt="admin";
 			String usertype=request.getParameter("usertype");
 			String username=request.getParameter("username");
+			session.setAttribute("name",username);  //把b放到session里，命名为a，
+			//String M = session.getAttribute(“name”).toString(); 
+			//从session里把a拿出来，并赋值给M
 			String userpass=request.getParameter("userpass");
 			Connection con=null;
 			Statement st=null;
@@ -22,37 +27,35 @@
 				st=con.createStatement();
 				if(usertype.equals(txt))
 				{
-					String sql="select * from index where username='"+username+"'";
+					String sql="select * from testInfo where username='"+username+"' and userpass='"+userpass+"'";
 					rs=st.executeQuery(sql);
-					if(rs.next()){
-					//密码
-					String sql2="select * from index where userpass='"+userpass+"'";
-					rs=st.executeQuery(sql2);
-					if(rs.next())
+					while(rs.next())
 					{
-						response.sendRedirect("show_test.jsp"); //网页名字还未定
+						r++;
+					}
+					if(r>0){
+						response.sendRedirect("teacher.jsp"); 
 					}
 					else{
 						response.sendRedirect("index.jsp");
 					}
 				}
-				}
+				
 				else{
-				 	String sql3="select * from index where username='"+username+"'";
-					rs=st.executeQuery(sql3);
-					if(rs.next()){
-					//密码
-					String sql4="select * from index where userpass='"+userpass+"'";
-					rs=st.executeQuery(sql4);
-					if(rs.next())
+					String sql="select * from testInfo where username='"+username+"' and userpass='"+userpass+"'";
+					rs=st.executeQuery(sql);
+					while(rs.next())
 					{
-						response.sendRedirect("student_main.jsp");
+						r++;
+					}
+					if(r>0){
+						response.sendRedirect("student_page/student.jsp");
 					}
 					else{
 						response.sendRedirect("index.jsp");
 					}
 				}
-				}
+				
 			}catch(Exception e){
 				e.printStackTrace();
 		}
