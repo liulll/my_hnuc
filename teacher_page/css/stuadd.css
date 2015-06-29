@@ -1,0 +1,56 @@
+div.center{
+	margin-top: 50px;
+	width: 800px;
+	margin-left: 100px;
+}
+h2{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+tr{
+	display: inline-block;		
+}
+tr.s_topic{
+	width: 40%;
+}
+td{
+	font-size: 15px;
+	height:40px;
+	line-height: 40px;
+}
+input.short{
+	height: 30px;
+	line-height: 30px;
+	width: 200px;
+	padding-left: 10px;
+	margin-left: 10px;
+}
+tr.l_topic{
+	width: 100%;
+}
+input.long1{
+	width: 800px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+}
+textarea{
+	width: 800px;
+	padding:10px 10px;
+}
+input.file{
+	display: inline-block;
+	width: 300px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	margin-right: 20px;
+}
+input.sure,input.clear,input.up{
+	height: 30px;
+	line-height: 30px;
+	width: 50px;
+}
+input.sure{
+	margin-right: 20px;
+}

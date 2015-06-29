@@ -1,0 +1,28 @@
+div.inn{
+	margin-left: 15%;
+}
+h2{
+	text-align: center;
+	margin: 20px;
+}
+h3{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	width: 70px;
+	font-size: 14px;
+}
+h3.long{
+	width: 250px;
+}
+input.short{
+	width: 440px;
+	padding: 5px;
+}
+input.lon{
+	width: 515px;
+	padding: 5px;
+}
+textarea.lon{
+	width: 515px;
+}

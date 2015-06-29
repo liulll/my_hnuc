@@ -9,16 +9,10 @@ body{
 p{
 	font-size: 13px;
 }
-div.left{
+/*div.left{
 	position: absolute;
 	display: inline-block;
-	left: 50px;
-}
-div.left a{
-	display: inline-block;
-	height: 50px;
-	margin-right: 
-	margin-top: 18px;
+	left: 100px;
 }
 div.left p{
 	float: right;
@@ -26,7 +20,19 @@ div.left p{
 div.right{
 	position: absolute;
 	right: 50px;
+}*/
+.header{position: relative;}
+.leftHeader{
+	display: inline-block;
+	left: 100px;
+	position: absolute;
 }
+.rightHeader{
+	display: inline-block;
+	position: absolute;
+	right: 120px;
+}
+.rightHeader .menu{float: right;}
 p.sname{
 	display: inline-block;
 }

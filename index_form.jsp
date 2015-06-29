@@ -34,6 +34,7 @@
 						<select name="usertype" size="1">
 							<option value="user">user</option>
 							<option value="admin">admin</option>
+							<option value="school">shcool</option>
 						</select>
 						</td>
 					</tr>

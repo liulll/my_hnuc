@@ -9,6 +9,7 @@
 		<%
 			r=0;
 			String txt="admin";
+			String txt1="school";
 			String usertype=request.getParameter("usertype");
 			String username=request.getParameter("username");
 			session.setAttribute("name",username);  //把b放到session里，命名为a，
@@ -27,22 +28,37 @@
 				st=con.createStatement();
 				if(usertype.equals(txt))
 				{
-					String sql="select * from testInfo where username='"+username+"' and userpass='"+userpass+"'";
+					String sql="select * from testInfo where username='"+username+"' and userpass='"+userpass+"' and usertype='"+usertype+"'";
 					rs=st.executeQuery(sql);
 					while(rs.next())
 					{
 						r++;
 					}
 					if(r>0){
-						response.sendRedirect("teacher.jsp"); 
+						response.sendRedirect("teacher_page/teacher.jsp"); 
 					}
 					else{
-						response.sendRedirect("index.jsp");
+						response.sendRedirect("indexwrong.jsp"); 
 					}
 				}
-				
 				else{
-					String sql="select * from testInfo where username='"+username+"' and userpass='"+userpass+"'";
+					if(usertype.equals(txt1))
+					{
+						String sql="select * from testInfo where username='"+username+"' and userpass='"+userpass+"' and usertype='"+usertype+"'";
+						rs=st.executeQuery(sql);
+						while(rs.next())
+						{
+							r++;
+						}
+						if(r>0){
+							response.sendRedirect("school_page/main.jsp"); 
+						}
+						else{
+							response.sendRedirect("indexwrong.jsp"); 
+						}
+					}
+					else{
+					String sql="select * from testInfo where username='"+username+"' and userpass='"+userpass+"' and usertype='"+usertype+"'";
 					rs=st.executeQuery(sql);
 					while(rs.next())
 					{
@@ -52,10 +68,10 @@
 						response.sendRedirect("student_page/student.jsp");
 					}
 					else{
-						response.sendRedirect("index.jsp");
+						response.sendRedirect("indexwrong.jsp"); 
 					}
 				}
-				
+					}
 			}catch(Exception e){
 				e.printStackTrace();
 		}

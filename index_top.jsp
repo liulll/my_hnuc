@@ -13,26 +13,27 @@
 		</style>
 	</head>
 	<body>
-		<div class="left">
-			<a href="http://www.hnuc.edu.cn" target="_blank"><img src="img/home.png"></a>
-			<div class="hr_right"></div>			
-			<p>志愿者登录系统</p>			
-		</div>
-		<div class="right">
-			<div class="menu">
-				<ul>
-				<li><a href="" class="hide"><%=session.getAttribute("name")%></a>
-				    <ul>
-				    <li class="change">
-				    	<!--<a href="change.jsp" target="_blank" title="change password">修改密码</a>-->
-				    	<a href="#" onclick="openwin()">修改密码</a>
-				    </li>
-				    </ul>
-				</li>
-				</ul>
+		<div class="header">
+			<div class="leftHeader">
+				<p>志愿者登录系统</p>		
 			</div>
-			<div class="hr_right"></div>
-			<div class="a"><a href="loginout.jsp" target="_top">退出</a></div>
+			<div class="rightHeader">
+				<div class="a"><a href="loginout.jsp" target="_top">退出</a></div>
+				<div class="menu">
+					<ul>
+					<li><a href="" class="hide"><%=session.getAttribute("name")%></a>
+					    <ul>
+					    <li class="change">
+					    	<!--<a href="change.jsp" target="_blank" title="change password">修改密码</a>-->
+					    	<a href="#" onclick="openwin()">修改密码</a>
+					    </li>
+					    </ul>
+					</li>
+					</ul>
+				</div>
+				<!-- <div class="hr_right"></div> -->
+<!-- 				<div class="a"><a href="loginout.jsp" target="_top">退出</a></div>
+ -->			</div>
 		</div>
 	</body>
 	<script LANGUAGE="JavaScript"> 
